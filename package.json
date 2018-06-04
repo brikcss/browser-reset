@@ -1,6 +1,6 @@
 {
 	"name": "@brikcss/browser-reset",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Minimal CSS browser reset.",
 	"author": "Brikcss <https://github.com/brikcss>",
 	"contributors": [
@@ -40,7 +40,7 @@
 		"start": "concurrently --raw \"npm run watch\" \"npm run serve\"",
 		"ci": "npm test",
 		"pretest": "npm run build",
-		"test": "npm run test:lint && npx shots test",
+		"test": "npx shots test",
 		"test:lint": "npm run lint:css && echo \"\n[ok] Linter complete.\n\"",
 		"prebuild": "rimraf dist",
 		"build": "stak --config=.stakcssrc.js:all",
