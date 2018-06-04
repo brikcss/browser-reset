@@ -1,6 +1,6 @@
 {
 	"name": "@brikcss/browser-reset",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Minimal CSS browser reset.",
 	"author": "Brikcss <https://github.com/brikcss>",
 	"contributors": [
@@ -22,8 +22,8 @@
 	],
 	"main": "./dist/browser-reset.init.css",
 	"files": [
-		"./dist",
-		"./src"
+		"dist",
+		"src"
 	],
 	"publishConfig": {
 		"tag": "dev",
@@ -38,7 +38,8 @@
 	},
 	"scripts": {
 		"start": "concurrently --raw \"npm run watch\" \"npm run serve\"",
-		"ci": "npm test",
+		"preci": "npm run build",
+		"ci": "npx shots test --fail false",
 		"pretest": "npm run build",
 		"test": "npx shots test",
 		"test:lint": "npm run lint:css && echo \"\n[ok] Linter complete.\n\"",
