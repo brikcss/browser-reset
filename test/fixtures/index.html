@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brikcss Browser Reset</title>
+	<link rel="stylesheet" type="text/css" href="../../dist/browser-reset.init.css">
+</head>
+<body>
+
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 6</h6>
+
+	<p><strong>Lorem ipsum dolor sit amet</strong>, consectetur<sup>sup</sup> adipisicing<sub>sub</sub> elit, <em>sed do eiusmod</em> <abbr title="Cascading Style Sheets">CSS</abbr> tempor <kbd>esc</kbd> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<p>Blockquote</p>
+	<blockquote>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</blockquote>
+
+	<p>Code block</p>
+	<pre><code>function myFunction(obj = {}) {
+	return 'My awesome function.';
+}</code></pre>
+
+	<hr>
+
+	<h2>Lists</h2>
+	<p>Unordered list</p>
+	<ul>
+		<li>Item one</li>
+		<li>Item two <ul>
+			<li>Nested one</li>
+			<li>Nested two</li>
+			<li>Nested three</li>
+		</ul></li>
+		<li>Item three</li>
+	</ul>
+
+	<p>Ordered list</p>
+	<ol>
+		<li>Number 1</li>
+		<li>Number 2 <ol>
+			<li>Nested 1</li>
+			<li>Nested 2</li>
+			<li>Nested 3</li>
+		</ol></li>
+		<li>Number 3</li>
+	</ol>
+
+	<p>Definition list</p>
+	<dl>
+		<dt>Title one</dt>
+		<dd>Definition one</dd>
+		<dt>Title two</dt>
+		<dd>Definition two</dd>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</dd>
+	</dl>
+
+	<h2>Table</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>one</th>
+				<th>two</th>
+				<th>three</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+			<tr>
+				<td>data</td>
+				<td>data</td>
+				<td>data</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>uno</th>
+				<th>dos</th>
+				<th>tres</th>
+			</tr>
+		</tfoot>
+	</table>
+
+	<h2>Image</h2>
+	<figure>
+		<img src="http://via.placeholder.com/200x100">
+	</figure>
+
+	<h2>Form</h2>
+	<form>
+		<fieldset>
+			<legend>Text inputs.</legend>
+			<input type="text" name="textinput" placeholder="Text input">
+			<input type="search" name="searchinput" placeholder="Search input">
+			<input type="email" name="emailinput" placeholder="Email input">
+			<input type="password" name="passwordinput" placeholder="Password input">
+			<input type="url" name="urlinput" placeholder="Url input">
+			<input type="tel" name="telinput" placeholder="Tel input">
+		</fieldset>
+		<fieldset>
+			<legend>Date, time, &amp; number inputs.</legend>
+			<input type="date" name="dateinput">
+			<input type="month" name="monthinput">
+			<input type="week" name="weekinput">
+			<input type="time" name="timeinput">
+			<input type="number" name="numberinput">
+		</fieldset>
+		<fieldset>
+			<legend>Checkbox inputs.</legend>
+			<label><input type="checkbox" name="checkbox"> checkbox</label>
+			<label><input type="radio" name="radio"> radio</label>
+		</fieldset>
+		<fieldset>
+			<legend>Select box.</legend>
+			<select>
+				<option>one</option>
+				<option>two</option>
+				<option>three</option>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>Text area.</legend>
+			<textarea placeholder="Textarea placeholder text..."></textarea>
+		</fieldset>
+		<fieldset>
+			<legend>Other graphical inputs.</legend>
+			<input type="color" name="colorinput">
+			<input type="file" name="fileinput">
+			<progress value="5" max="10">50%</progress>
+			<input type="range" name="rangeinput">
+		</fieldset>
+	</form>
+
+	<h2>Buttons and links</h2>
+	<a href="#">Hyperlink</a>
+	<a>Hyperlink (no href)</a>
+	<button type="button">Button</button>
+	<input type="button" name="button" value="Button Input">
+	<input type="reset" name="submitbutton" value="Reset Input">
+	<input type="submit" name="submitbutton" value="Submit Input">
+
+	<h2>Summary / Details</h2>
+	<details>
+		<summary>System Requirements</summary>
+		<p>Requires a computer running an operating system. The computer must have some memory and ideally some kind of long-term storage. An input device as well as some form of output device is recommended.</p>
+	</details>
+
+</body>
+</html>

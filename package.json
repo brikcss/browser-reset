@@ -1,0 +1,76 @@
+{
+	"name": "@brikcss/browser-reset",
+	"version": "0.0.1",
+	"description": "Minimal CSS browser reset.",
+	"author": "Brikcss <https://github.com/brikcss>",
+	"contributors": [
+		"The Zimmee <thezimmee@gmail.com>"
+	],
+	"homepage": "https://github.com/brikcss/browser-reset",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/brikcss/browser-reset.git"
+	},
+	"bugs": {
+		"url": "https://github.com/brikcss/browser-reset/issues"
+	},
+	"keywords": [
+		"brikcss",
+		"css",
+		"browser",
+		"reset"
+	],
+	"main": "./dist/browser-reset.init.css",
+	"files": [
+		"./dist",
+		"./src"
+	],
+	"publishConfig": {
+		"tag": "dev",
+		"access": "public"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "NODE_ENV=production node ./node_modules/.bin/pre-commit-lint",
+			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS && . ./node_modules/.bin/commit-msg-stamp-branch ${HUSKY_GIT_PARAMS}",
+			"pre-push": ". ./node_modules/.bin/pre-push-check-stage && echo \"\n[ok] Pushing code...\""
+		}
+	},
+	"scripts": {
+		"start": "concurrently --raw \"npm run watch\" \"npm run serve\"",
+		"ci": "npm test",
+		"pretest": "npm run build",
+		"test": "npm run test:lint && npx shots test",
+		"test:lint": "npm run lint:css && echo \"\n[ok] Linter complete.\n\"",
+		"prebuild": "rimraf dist",
+		"build": "stak --config=.stakcssrc.js:all",
+		"watch": "npm run build -- --watch",
+		"serve": "browser-sync start --config ./.browsersyncrc.js",
+		"lint:css": "node ./node_modules/.bin/stylelint src/**/*.css --format=stylish",
+		"semantic-release": "semantic-release"
+	},
+	"devDependencies": {
+		"@brikcss/git-hooks": "1.2.0",
+		"@brikcss/shots": "0.0.1",
+		"@brikcss/stakcss": "0.8.0",
+		"@brikcss/stakcss-bundler-copy": "0.1.0",
+		"@brikcss/stakcss-bundler-postcss": "0.4.0",
+		"@brikcss/stylelint-config-css": "0.0.7",
+		"@commitlint/cli": "6.2.0",
+		"autoprefixer": "8.5.2",
+		"browser-sync": "2.24.4",
+		"concurrently": "3.5.1",
+		"pixelmatch": "4.0.2",
+		"postcss": "6.0.22",
+		"postcss-apply": "0.10.0",
+		"postcss-csso": "3.0.0",
+		"postcss-reporter": "5.0.0",
+		"postcss-url": "7.3.2",
+		"prettier": "1.13.4",
+		"puppeteer": "1.4.0",
+		"rimraf": "2.6.2",
+		"semantic-release": "15.5.0",
+		"stylelint": "9.2.1",
+		"stylelint-formatter-pretty": "1.0.3"
+	}
+}
