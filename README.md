@@ -40,13 +40,19 @@
 	</a> -->
 </p>
 
-A simple CSS browser reset.
+A simple and modern CSS browser reset.
 
-## Environment support
+## Environment and browser support
 
 | Node   | CLI   | UMD   | ES Module | Browser   |
 |:------:|:-----:|:-----:|:---------:|:---------:|
 | x      | x     | x     | x         | ✔         |
+
+| Chrome | Firefox | Safari | Edge | IE  | iOS | Android |
+|:------:|:-------:|:------:|:----:|:---:|:---:|:-------:|
+| ✔     | ✔       | ✔      | ✔   | 11* | ✔   | ✔       |
+
+\* _Note: Since browser-reset uses [CSS Variables](https://caniuse.com/#search=css%20variables), IE11 is supported with the use of a postcss custom variables polyfill, such as [this one](https://github.com/luwes/postcss-var-shim)._
 
 ## Install
 
