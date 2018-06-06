@@ -1,25 +1,39 @@
-const isProd = process.env.NODE_ENV === 'production';
-const config = {
+/** Setup.
+ ============================================================================================= */
+
+const env = process.env.NODE_ENV;
+const isProd = ['production', 'prod', 'test'].includes(env);
+const loadPostcssPlugins = require('./.postcssrc.js');
+const basePostcssPlugins = ['autoprefixer'];
+
+/** Config export object.
+ ============================================================================================= */
+
+let config = {
 	css: {
-		source: 'src/browser-reset.init.css',
-		output: './dist/browser-reset.init.css',
-		bundlers: ['@brikcss/stakcss-bundler-postcss']
+		source: 'src/browser-reset.css',
+		output: './dist/browser-reset.css',
+		bundlers: [
+			{
+				run: '@brikcss/stakcss-bundler-postcss',
+				options: { skipConfig: true, map: false },
+				plugins: loadPostcssPlugins(...basePostcssPlugins.concat(['postcss-reporter']))
+			}
+		]
 	}
 };
 
 if (isProd) {
-	config.css_min = {
-		source: 'src/browser-reset.init.css',
-		output: './dist/browser-reset.init.min.css',
-		bundlers: ['@brikcss/stakcss-bundler-postcss']
-	};
-	config.css.bundlers = [
-		{
-			run: '@brikcss/stakcss-bundler-postcss',
-			options: { skipConfig: true },
-			plugins: [require('autoprefixer')()]
-		}
-	];
+	config.css_min = Object.assign({}, config.css, {
+		output: 'dist/browser-reset.min.css',
+		bundlers: [
+			{
+				run: '@brikcss/stakcss-bundler-postcss',
+				options: { skipConfig: true, map: false },
+				plugins: loadPostcssPlugins(...basePostcssPlugins.concat(['postcss-csso']))
+			}
+		]
+	});
 }
 
 module.exports = config;

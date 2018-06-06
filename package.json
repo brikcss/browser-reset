@@ -1,6 +1,6 @@
 {
 	"name": "@brikcss/browser-reset",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "Minimal CSS browser reset.",
 	"author": "Brikcss <https://github.com/brikcss>",
 	"contributors": [
@@ -20,7 +20,7 @@
 		"browser",
 		"reset"
 	],
-	"main": "./dist/browser-reset.init.css",
+	"main": "./dist/browser-reset.min.css",
 	"files": [
 		"dist",
 		"src"
@@ -33,12 +33,12 @@
 		"hooks": {
 			"pre-commit": "NODE_ENV=production node ./node_modules/.bin/pre-commit-lint",
 			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS && . ./node_modules/.bin/commit-msg-stamp-branch ${HUSKY_GIT_PARAMS}",
-			"pre-push": ". ./node_modules/.bin/pre-push-check-stage && echo \"\n[ok] Pushing code...\""
+			"pre-push": "NODE_ENV=test npm test && . ./node_modules/.bin/pre-push-check-stage && echo \"\n[ok] Pushing code...\""
 		}
 	},
 	"scripts": {
 		"start": "concurrently --raw \"npm run watch\" \"npm run serve\"",
-		"preci": "npm run build",
+		"preci": "NODE_ENV=test npm run build",
 		"ci": "npx shots test --fail false",
 		"pretest": "npm run build",
 		"test": "npx shots test",

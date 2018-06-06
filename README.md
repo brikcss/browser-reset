@@ -62,4 +62,6 @@ A simple and modern CSS browser reset.
 	npm i -d @brikcss/browser-reset
 	```
 
-2. Include `./dist/browser-reset.init.css` as the first stylesheet in your app.
+2. Include `./dist/browser-reset.css` as the first stylesheet in your app.
+
+3. (optional) Change base variables in your app's CSS, as desired (see [source browser-reset.css](./src/browser-reset.css) for available variables).
